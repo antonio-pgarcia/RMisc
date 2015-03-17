@@ -13,7 +13,7 @@
 
 # ------------------------------------------------------------
 # Compute the polynomial equations for plasmid dataset
-# Filtering the first 8 hours of experimental observations
+# filtering the first 8 hours of experimental observations
 # ------------------------------------------------------------
 bs.plasmid.eqns<- function() {
   d<- bs.filter(bs.plasmids(),expression(Time <= 8))

@@ -27,10 +27,11 @@ bs.polynom.string<- function(m) {
   s<- paste0("y= ", format(coef(m)[1], digits = 2))
   
   for(i in 2:length(m$coefficients)) { 
-    if( i <= 2 ) 
+    if(i <= 2) { 
       s<- paste0(s," + ", format(m$coefficients[i], digits = 2)," x") 
-    else	
+    } else {	
       s<- paste0(s," + ", format(m$coefficients[i], digits = 2)," x^",i-1) 
+    }
   }
   return(s)
 }

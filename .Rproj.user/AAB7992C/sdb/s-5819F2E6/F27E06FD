@@ -1,0 +1,16 @@
+{
+    "contents" : "# ------------------------------------------------------------\n# Linear models \n#\n# ------------------------------------------------------------\n\n# ------------------------------------------------------------\n# polynom computes linear polynomial models for data\n#\n# @param d data frame containing x and y series\n# @param x series\n# @param y series\n# @param o the model degree\n# @return the model fitted to data\n# ------------------------------------------------------------\nbs.polynom<- function(d,x,y,o) {\n  model<- with(d,lm(y~poly(x,o,raw=TRUE)))\n  return(model)\n}\n\n#--------------------------------------------------------------------------------\n# bs.polynom.string Converts a polinomyal model output to a equation string\n#\n# @param m  The polynomial model\n# @return \tThe equation string as y= b + b x + b x^2 + ... + b x^n\n#--------------------------------------------------------------------------------\nbs.polynom.string<- function(m) {\n  s<- paste0(\"y= \", format(coef(m)[1], digits = 2))\n  \n  for(i in 2:length(m$coefficients)) { \n    if( i <= 2 ) \n      s<- paste0(s,\" + \", format(m$coefficients[i], digits = 2),\" x\") \n    else\t\n      s<- paste0(s,\" + \", format(m$coefficients[i], digits = 2),\" x^\",i-1) \n  }\n  return(s)\n}",
+    "created" : 1426600716692.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1495141634",
+    "id" : "F27E06FD",
+    "lastKnownWriteTime" : 1426608479,
+    "path" : "~/R-Projects/bactosim/R/linear-models.r",
+    "project_path" : "R/linear-models.r",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

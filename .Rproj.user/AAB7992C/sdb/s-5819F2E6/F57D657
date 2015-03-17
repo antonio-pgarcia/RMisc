@@ -1,0 +1,16 @@
+{
+    "contents" : "exportPattern(\"^[[:alpha:]]+\")\n",
+    "created" : 1426170091651.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4116331488",
+    "id" : "F57D657",
+    "lastKnownWriteTime" : 1426169952,
+    "path" : "~/R-Projects/bactosim/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_namespace"
+}

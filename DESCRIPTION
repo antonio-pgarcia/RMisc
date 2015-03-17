@@ -1,0 +1,9 @@
+Package: bactosim
+Type: Package
+Title: The BactoSim data analysis tools 
+Version: 1.0
+Date: 2015-03-12
+Author: Antônio Prestes García
+Maintainer: Antônio Prestes García <antonio.garcia2@gmail.com>
+Description: The BactoSim helper tools for analysis of simulation output
+License: GPL

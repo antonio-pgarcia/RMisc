@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{bactosim-package}\n\\alias{bactosim-package}\n\\alias{bactosim}\n\\docType{package}\n\\title{\nWhat the package does (short line)\n~~ package title ~~\n}\n\\description{\nMore about what it does (maybe more than one line)\n~~ A concise (1-5 lines) description of the package ~~\n}\n\\details{\n\\tabular{ll}{\nPackage: \\tab bactosim\\cr\nType: \\tab Package\\cr\nVersion: \\tab 1.0\\cr\nDate: \\tab 2015-03-12\\cr\nLicense: \\tab What license is it under?\\cr\n}\n~~ An overview of how to use the package, including the most important functions ~~\n}\n\\author{\nWho wrote it\n\nMaintainer: Who to complain to <yourfault@somewhere.net>\n~~ The author and/or maintainer of the package ~~\n}\n\\references{\n~~ Literature or other references for background information ~~\n}\n~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R ~~\n~~ documentation directory ~~\n\\keyword{ package }\n\\seealso{\n~~ Optional links to other man pages, e.g. ~~\n~~ \\code{\\link[<pkg>:<pkg>-package]{<pkg>}} ~~\n}\n\\examples{\n~~ simple examples of the most important functions ~~\n}\n",
+    "created" : 1426242399919.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1029601753",
+    "id" : "1F94B5D7",
+    "lastKnownWriteTime" : 1426169953,
+    "path" : "~/R-Projects/bactosim/man/bactosim-package.Rd",
+    "project_path" : "man/bactosim-package.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}

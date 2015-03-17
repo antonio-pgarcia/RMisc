@@ -1,0 +1,16 @@
+{
+    "contents" : "Package: bactosim\nType: Package\nTitle: The BactoSim data analysis tools \nVersion: 1.0\nDate: 2015-03-12\nAuthor: Antônio Prestes García\nMaintainer: Antônio Prestes García <antonio.garcia2@gmail.com>\nDescription: The BactoSim helper tools for analysis of simulation output\nLicense: GPL\n",
+    "created" : 1426170104406.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1092731193",
+    "id" : "3D9BBA93",
+    "lastKnownWriteTime" : 1426520320,
+    "path" : "~/R-Projects/bactosim/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "dcf"
+}

@@ -1,0 +1,17 @@
+{
+    "contents" : "# ------------------------------------------------------------\n# A bunch of utilities for reading and processing data\n#\n# ------------------------------------------------------------\n\n# ------------------------------------------------------------\n# Rename column name\n#\n# @param d data frame containing the column to be renamed\n# @param old column name\n# @param nnew the new column name\n# @return the data frame with renamed column\n# ------------------------------------------------------------\nbs.rename<- function(d,old,nnew) {\n  names(d)[names(d) == old]<- nnew\n  return(d)\n}\n\n#--------------------------------------------------------------------------------\n# read\n#\n# @param f The file name \n# @return The loaded data frame\n#--------------------------------------------------------------------------------\nbs.read<- function(f) {\n  # Reading data with headers\n  d<- read.table(f,header=TRUE)\n  return(d)\n}\n\n#--------------------------------------------------------------------------------\n# filter\n#\n# @param d data frame\n# @param e filter expression\n# @return Filtered data frame\n#--------------------------------------------------------------------------------\nbs.filter<- function(d,e) {\n  dd<- with(d, subset(d, eval(e), drop=TRUE)) \n  return(dd)\n}\n\n#--------------------------------------------------------------------------------\n# plasmids\n#\n# @param \n# @return The experimental plasmid data frame\n#--------------------------------------------------------------------------------\nbs.plasmids<- function() {\n  return(bs.read(\"raw-data/plasmid-dataset.dat\"))\n}",
+    "created" : 1426520635855.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2940710969",
+    "id" : "28739B6C",
+    "lastKnownWriteTime" : 1426608051,
+    "path" : "~/R-Projects/bactosim/R/data-utils.r",
+    "project_path" : "R/data-utils.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

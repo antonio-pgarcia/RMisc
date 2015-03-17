@@ -1,0 +1,16 @@
+{
+    "contents" : "# ------------------------------------------------------------\n# BactoSim library entry point\n#\n# ------------------------------------------------------------\n\n# ------------------------------------------------------------\n# .onLoad shows the library disclaimer\n#\n# ------------------------------------------------------------\n.onLoad<- function(libname, pkgname) {\n  packageStartupMessage(\"BactoSim(haldane) data analysis tools v1.0\\n\")\n}\n\n# ------------------------------------------------------------\n# Compute the polynomial equations for plasmid dataset\n# Filtering the first 8 hours of experimental observations\n# ------------------------------------------------------------\nbs.plasmid.eqns<- function() {\n  d<- bs.filter(bs.plasmids(),expression(Time <= 8))\n  d$Time<- d$Time * 60\n  l1<- levels(factor(d$Plasmid))\n  l2<- levels(factor(d$Density))\n  for(p in l1) {\n    for(k in l2) {\n      d1<- bs.filter(d,bquote(Plasmid == .(p) & Density == .(k)))\n      m<- bs.polynom(d1,d1$Time,d1$Rate,3)\n      s<- bs.polynom.string(m)\n      print(paste(p,\"(\",k,\") ::\",s))\n    }\n  }\n}",
+    "created" : 1426520475029.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1301170446",
+    "id" : "B20FDDB0",
+    "lastKnownWriteTime" : 1426619055,
+    "path" : "~/R-Projects/bactosim/R/bactosim.r",
+    "project_path" : "R/bactosim.r",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

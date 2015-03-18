@@ -1,0 +1,17 @@
+{
+    "contents" : ".plasmids<- \"raw-data/plasmid-dataset.dat\"",
+    "created" : 1426707969203.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3089191036",
+    "id" : "FF57385D",
+    "lastKnownWriteTime" : 1426708032,
+    "path" : "~/R-Projects/bactosim/R/constants.R",
+    "project_path" : "R/constants.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

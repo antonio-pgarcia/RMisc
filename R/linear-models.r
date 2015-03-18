@@ -1,7 +1,14 @@
-# ------------------------------------------------------------
-# Linear models 
+#================================================================================
+# @linear-models.r, A R Script for model fitting
 #
-# ------------------------------------------------------------
+# This script was developed as part of PhD thesis
+# 
+# @author Antonio Prestes Garcia
+# @date Feb/2015
+#
+# Changelog:
+# 
+#================================================================================
 
 # ------------------------------------------------------------
 # polynom computes linear polynomial models for data
@@ -34,4 +41,19 @@ bs.polynom.string<- function(m) {
     }
   }
   return(s)
+}
+
+
+#--------------------------------------------------------------------------------
+# bs.regression.string 
+#
+# @param m The regression model
+# @return A string representation of regression equation and R squared. 
+#--------------------------------------------------------------------------------
+bs.regression.string<- function(m) {
+  e<- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2, 
+                 list(a = format(coef(model)[1], digits = 2), 
+                      b = format(coef(model)[2], digits = 2), 
+                      r2 = format(summary(model)$r.squared, digits = 3)))
+  return(as.character(as.expression(e)))                  
 }

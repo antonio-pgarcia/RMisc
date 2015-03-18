@@ -1,0 +1,16 @@
+{
+    "contents" : "#================================================================================\n# @bactosim.r, The library entry point\n#\n# This script was developed as part of PhD thesis\n# \n# @author Antonio Prestes Garcia\n# @date Feb/2015\n#\n# Changelog:\n# \n#================================================================================\n\n# ------------------------------------------------------------\n# .onLoad shows the library disclaimer\n#\n# ------------------------------------------------------------\n.onLoad<- function(libname, pkgname) {\n  packageStartupMessage(\"BactoSim(haldane) simulation and data analysis tools version 1.1.0\\n\")\n  \n  # ----- Libraries ---------------------------------------------------------------\n  library(ggplot2)\n  library(gdata)\n  library(grid)\n  \n  # ----- Global defines ----------------------------------------------------------\n  \n}\n\n# ------------------------------------------------------------\n# Compute the polynomial equations for plasmid dataset\n# filtering the first 8 hours of experimental observations\n# ------------------------------------------------------------\nbs.plasmid.eqns<- function() {\n  d<- bs.filter(bs.plasmids(),expression(Time <= 8))\n  d$Time<- d$Time * 60\n  l1<- levels(factor(d$Plasmid))\n  l2<- levels(factor(d$Density))\n  for(p in l1) {\n    for(k in l2) {\n      d1<- bs.filter(d,bquote(Plasmid == .(p) & Density == .(k)))\n      m<- bs.polynom(d1,d1$Time,d1$Rate,3)\n      s<- bs.polynom.string(m)\n      print(paste(p,\"(\",k,\") ::\",s))\n    }\n  }\n}\n\n\n# ------------------------------------------------------------\n# plot rates for plasmid dataset\n# \n# ------------------------------------------------------------\nbs.plasmid.plots<- function() {\n  all.d<- bs.plasmids()\n  max.y<- c(0,ceiling(max(d$Rate,na.rm=TRUE)))\n  d<- bs.filter(all.d,expression(Time <= 12))\n  d$Time<- d$Time * 60\n  max.x<- c(0,ceiling(max(d$Time,na.rm=TRUE)))\n  scale.x <- seq(0,max.x[2],length.out=100)\n  l1<- levels(factor(d$Plasmid))\n  l2<- levels(factor(d$Density))\n  for(p in l1) {\n    for(k in l2) {\n      d1<- bs.filter(d,bquote(Plasmid == .(p) & Density == .(k)))\n      m<- bs.polynom(d1,d1$Time,d1$Rate,3)\n      v<- data.frame(Time = scale.x, Rate = predict(m, data.frame(x=scale.x)))\n      v$PLasmid<- rep(p,length(scale.x))\n      #print(paste(p,\"(\",k,\")\"))\n      g<- bs.beginPlot(\"Conjugation Rate\",\"Time(minutes)\",\"T/(T+R)\",max.x,max.y)\n      g<- bs.addPoints(g, d1, \"Time\", \"Rate\",\"Plasmid\", \"blue\", paste0(p,\"(\",k,\"%)\"))\n      g<- bs.addLine(g, v, \"Time\", \"Rate\",\"Plasmid\", \"red\", \"Polynom\")\n      g<- bs.endPlot(g)\n      print(g)\n    }\n  }\n  return(g)\n}\n\n\n\n",
+    "created" : 1426520475029.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2913116534",
+    "id" : "B20FDDB0",
+    "lastKnownWriteTime" : 1426695520,
+    "path" : "~/R-Projects/bactosim/R/bactosim.r",
+    "project_path" : "R/bactosim.r",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,7 +1,14 @@
-# ------------------------------------------------------------
-# A bunch of utilities for reading and processing data
+#================================================================================
+# @data-utils.r, A R Script with utilities for data processing
 #
-# ------------------------------------------------------------
+# This script was developed as part of PhD thesis
+# 
+# @author Antonio Prestes Garcia
+# @date Feb/2015
+#
+# Changelog:
+# 
+#================================================================================
 
 # ------------------------------------------------------------
 # Rename column name

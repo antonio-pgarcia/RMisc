@@ -56,3 +56,4 @@ bs.filter<- function(d,e) {
 bs.plasmids<- function() {
   return(bs.read("raw-data/plasmid-dataset.dat"))
 }
+

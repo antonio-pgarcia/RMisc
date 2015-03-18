@@ -109,3 +109,5 @@ bs.addLine<- function(g,d,x,y,l,color, name) {
   g$mycolors<- c(g$mycolors,c(color))  
   return(g)
 }
+
+
